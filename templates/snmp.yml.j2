@@ -1,0 +1,3701 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+apc_ups:
+  walk:
+  - 1.3.6.1.2.1.33.1
+  - 1.3.6.1.4.1.318.1.1.25.1.2.1.6
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.4.1.318.1.1.1.2.2.2.0
+  - 1.3.6.1.4.1.318.1.1.1.2.2.3.0
+  - 1.3.6.1.4.1.318.1.1.1.4.1.1.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: upsBatteryStatus
+    oid: 1.3.6.1.2.1.33.1.2.1
+    type: gauge
+    help: The indication of the capacity remaining in the UPS system's batteries -
+      1.3.6.1.2.1.33.1.2.1
+    enum_values:
+      1: unknown
+      2: batteryNormal
+      3: batteryLow
+      4: batteryDepleted
+  - name: upsSecondsOnBattery
+    oid: 1.3.6.1.2.1.33.1.2.2
+    type: gauge
+    help: If the unit is on battery power, the elapsed time since the UPS last switched
+      to battery power, or the time since the network management subsystem was last
+      restarted, whichever is less - 1.3.6.1.2.1.33.1.2.2
+  - name: upsEstimatedMinutesRemaining
+    oid: 1.3.6.1.2.1.33.1.2.3
+    type: gauge
+    help: An estimate of the time to battery charge depletion under the present load
+      conditions if the utility power is off and remains off, or if it were to be
+      lost and remain off. - 1.3.6.1.2.1.33.1.2.3
+  - name: upsEstimatedChargeRemaining
+    oid: 1.3.6.1.2.1.33.1.2.4
+    type: gauge
+    help: An estimate of the battery charge remaining expressed as a percent of full
+      charge. - 1.3.6.1.2.1.33.1.2.4
+  - name: upsBatteryVoltage
+    oid: 1.3.6.1.2.1.33.1.2.5
+    type: gauge
+    help: The magnitude of the present battery voltage. - 1.3.6.1.2.1.33.1.2.5
+  - name: upsBatteryCurrent
+    oid: 1.3.6.1.2.1.33.1.2.6
+    type: gauge
+    help: The present battery current. - 1.3.6.1.2.1.33.1.2.6
+  - name: upsBatteryTemperature
+    oid: 1.3.6.1.2.1.33.1.2.7
+    type: gauge
+    help: The ambient temperature at or near the UPS Battery casing. - 1.3.6.1.2.1.33.1.2.7
+  - name: upsInputLineBads
+    oid: 1.3.6.1.2.1.33.1.3.1
+    type: counter
+    help: A count of the number of times the input entered an out-of-tolerance condition
+      as defined by the manufacturer - 1.3.6.1.2.1.33.1.3.1
+  - name: upsInputNumLines
+    oid: 1.3.6.1.2.1.33.1.3.2
+    type: gauge
+    help: The number of input lines utilized in this device - 1.3.6.1.2.1.33.1.3.2
+  - name: upsInputLineIndex
+    oid: 1.3.6.1.2.1.33.1.3.3.1.1
+    type: gauge
+    help: The input line identifier. - 1.3.6.1.2.1.33.1.3.3.1.1
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputFrequency
+    oid: 1.3.6.1.2.1.33.1.3.3.1.2
+    type: gauge
+    help: The present input frequency. - 1.3.6.1.2.1.33.1.3.3.1.2
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputVoltage
+    oid: 1.3.6.1.2.1.33.1.3.3.1.3
+    type: gauge
+    help: The magnitude of the present input voltage. - 1.3.6.1.2.1.33.1.3.3.1.3
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputCurrent
+    oid: 1.3.6.1.2.1.33.1.3.3.1.4
+    type: gauge
+    help: The magnitude of the present input current. - 1.3.6.1.2.1.33.1.3.3.1.4
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputTruePower
+    oid: 1.3.6.1.2.1.33.1.3.3.1.5
+    type: gauge
+    help: The magnitude of the present input true power. - 1.3.6.1.2.1.33.1.3.3.1.5
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsOutputSource
+    oid: 1.3.6.1.2.1.33.1.4.1
+    type: gauge
+    help: The present source of output power - 1.3.6.1.2.1.33.1.4.1
+    enum_values:
+      1: other
+      2: none
+      3: normal
+      4: bypass
+      5: battery
+      6: booster
+      7: reducer
+  - name: upsOutputFrequency
+    oid: 1.3.6.1.2.1.33.1.4.2
+    type: gauge
+    help: The present output frequency. - 1.3.6.1.2.1.33.1.4.2
+  - name: upsOutputNumLines
+    oid: 1.3.6.1.2.1.33.1.4.3
+    type: gauge
+    help: The number of output lines utilized in this device - 1.3.6.1.2.1.33.1.4.3
+  - name: upsOutputLineIndex
+    oid: 1.3.6.1.2.1.33.1.4.4.1.1
+    type: gauge
+    help: The output line identifier. - 1.3.6.1.2.1.33.1.4.4.1.1
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputVoltage
+    oid: 1.3.6.1.2.1.33.1.4.4.1.2
+    type: gauge
+    help: The present output voltage. - 1.3.6.1.2.1.33.1.4.4.1.2
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputCurrent
+    oid: 1.3.6.1.2.1.33.1.4.4.1.3
+    type: gauge
+    help: The present output current. - 1.3.6.1.2.1.33.1.4.4.1.3
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputPower
+    oid: 1.3.6.1.2.1.33.1.4.4.1.4
+    type: gauge
+    help: The present output true power. - 1.3.6.1.2.1.33.1.4.4.1.4
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputPercentLoad
+    oid: 1.3.6.1.2.1.33.1.4.4.1.5
+    type: gauge
+    help: The percentage of the UPS power capacity presently being used on this output
+      line, i.e., the greater of the percent load of true power capacity and the percent
+      load of VA. - 1.3.6.1.2.1.33.1.4.4.1.5
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsBypassFrequency
+    oid: 1.3.6.1.2.1.33.1.5.1
+    type: gauge
+    help: The present bypass frequency. - 1.3.6.1.2.1.33.1.5.1
+  - name: upsBypassNumLines
+    oid: 1.3.6.1.2.1.33.1.5.2
+    type: gauge
+    help: The number of bypass lines utilized in this device - 1.3.6.1.2.1.33.1.5.2
+  - name: upsBypassLineIndex
+    oid: 1.3.6.1.2.1.33.1.5.3.1.1
+    type: gauge
+    help: The bypass line identifier. - 1.3.6.1.2.1.33.1.5.3.1.1
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassVoltage
+    oid: 1.3.6.1.2.1.33.1.5.3.1.2
+    type: gauge
+    help: The present bypass voltage. - 1.3.6.1.2.1.33.1.5.3.1.2
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassCurrent
+    oid: 1.3.6.1.2.1.33.1.5.3.1.3
+    type: gauge
+    help: The present bypass current. - 1.3.6.1.2.1.33.1.5.3.1.3
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassPower
+    oid: 1.3.6.1.2.1.33.1.5.3.1.4
+    type: gauge
+    help: The present true power conveyed by the bypass. - 1.3.6.1.2.1.33.1.5.3.1.4
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsAlarmsPresent
+    oid: 1.3.6.1.2.1.33.1.6.1
+    type: gauge
+    help: The present number of active alarm conditions. - 1.3.6.1.2.1.33.1.6.1
+  - name: upsAlarmId
+    oid: 1.3.6.1.2.1.33.1.6.2.1.1
+    type: gauge
+    help: A unique identifier for an alarm condition - 1.3.6.1.2.1.33.1.6.2.1.1
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsAlarmDescr
+    oid: 1.3.6.1.2.1.33.1.6.2.1.2
+    type: OctetString
+    help: A reference to an alarm description object - 1.3.6.1.2.1.33.1.6.2.1.2
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsAlarmTime
+    oid: 1.3.6.1.2.1.33.1.6.2.1.3
+    type: gauge
+    help: The value of sysUpTime when the alarm condition was detected - 1.3.6.1.2.1.33.1.6.2.1.3
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsShutdownType
+    oid: 1.3.6.1.2.1.33.1.8.1
+    type: gauge
+    help: This object determines the nature of the action to be taken at the time
+      when the countdown of the upsShutdownAfterDelay and upsRebootWithDuration objects
+      reaches zero - 1.3.6.1.2.1.33.1.8.1
+    enum_values:
+      1: output
+      2: system
+  - name: upsShutdownAfterDelay
+    oid: 1.3.6.1.2.1.33.1.8.2
+    type: gauge
+    help: Setting this object will shutdown (i.e., turn off) either the UPS output
+      or the UPS system (as determined by the value of upsShutdownType at the time
+      of shutdown) after the indicated number of seconds, or less if the UPS batteries
+      become depleted - 1.3.6.1.2.1.33.1.8.2
+  - name: upsStartupAfterDelay
+    oid: 1.3.6.1.2.1.33.1.8.3
+    type: gauge
+    help: Setting this object will start the output after the indicated number of
+      seconds, including starting the UPS, if necessary - 1.3.6.1.2.1.33.1.8.3
+  - name: upsRebootWithDuration
+    oid: 1.3.6.1.2.1.33.1.8.4
+    type: gauge
+    help: Setting this object will immediately shutdown (i.e., turn off) either the
+      UPS output or the UPS system (as determined by the value of upsShutdownType
+      at the time of shutdown) for a period equal to the indicated number of seconds,
+      after which time the output will be started, including starting the UPS, if
+      necessary - 1.3.6.1.2.1.33.1.8.4
+  - name: upsAutoRestart
+    oid: 1.3.6.1.2.1.33.1.8.5
+    type: gauge
+    help: Setting this object to 'on' will cause the UPS system to restart after a
+      shutdown if the shutdown occurred during a power loss as a result of either
+      a upsShutdownAfterDelay or an internal battery depleted condition - 1.3.6.1.2.1.33.1.8.5
+    enum_values:
+      1: "on"
+      2: "off"
+  - name: upsConfigInputVoltage
+    oid: 1.3.6.1.2.1.33.1.9.1
+    type: gauge
+    help: The magnitude of the nominal input voltage - 1.3.6.1.2.1.33.1.9.1
+  - name: upsConfigInputFreq
+    oid: 1.3.6.1.2.1.33.1.9.2
+    type: gauge
+    help: The nominal input frequency - 1.3.6.1.2.1.33.1.9.2
+  - name: upsConfigOutputVoltage
+    oid: 1.3.6.1.2.1.33.1.9.3
+    type: gauge
+    help: The magnitude of the nominal output voltage - 1.3.6.1.2.1.33.1.9.3
+  - name: upsConfigOutputFreq
+    oid: 1.3.6.1.2.1.33.1.9.4
+    type: gauge
+    help: The nominal output frequency - 1.3.6.1.2.1.33.1.9.4
+  - name: upsConfigOutputVA
+    oid: 1.3.6.1.2.1.33.1.9.5
+    type: gauge
+    help: The magnitude of the nominal Volt-Amp rating. - 1.3.6.1.2.1.33.1.9.5
+  - name: upsConfigOutputPower
+    oid: 1.3.6.1.2.1.33.1.9.6
+    type: gauge
+    help: The magnitude of the nominal true power rating. - 1.3.6.1.2.1.33.1.9.6
+  - name: upsConfigLowBattTime
+    oid: 1.3.6.1.2.1.33.1.9.7
+    type: gauge
+    help: The value of upsEstimatedMinutesRemaining at which a lowBattery condition
+      is declared - 1.3.6.1.2.1.33.1.9.7
+  - name: upsConfigAudibleStatus
+    oid: 1.3.6.1.2.1.33.1.9.8
+    type: gauge
+    help: The requested state of the audible alarm - 1.3.6.1.2.1.33.1.9.8
+    enum_values:
+      1: disabled
+      2: enabled
+      3: muted
+  - name: upsConfigLowVoltageTransferPoint
+    oid: 1.3.6.1.2.1.33.1.9.9
+    type: gauge
+    help: The minimum input line voltage allowed before the UPS system transfers to
+      battery backup. - 1.3.6.1.2.1.33.1.9.9
+  - name: upsConfigHighVoltageTransferPoint
+    oid: 1.3.6.1.2.1.33.1.9.10
+    type: gauge
+    help: The maximum line voltage allowed before the UPS system transfers to battery
+      backup. - 1.3.6.1.2.1.33.1.9.10
+  - name: upsAdvBatteryTemperature
+    oid: 1.3.6.1.4.1.318.1.1.1.2.2.2
+    type: gauge
+    help: The current internal UPS temperature expressed in Celsius. - 1.3.6.1.4.1.318.1.1.1.2.2.2
+  - name: upsAdvBatteryRunTimeRemaining
+    oid: 1.3.6.1.4.1.318.1.1.1.2.2.3
+    type: gauge
+    help: The UPS battery run time remaining before battery exhaustion. - 1.3.6.1.4.1.318.1.1.1.2.2.3
+  - name: upsBasicOutputStatus
+    oid: 1.3.6.1.4.1.318.1.1.1.4.1.1
+    type: gauge
+    help: The current state of the UPS - 1.3.6.1.4.1.318.1.1.1.4.1.1
+    enum_values:
+      1: unknown
+      2: onLine
+      3: onBattery
+      4: onSmartBoost
+      5: timedSleeping
+      6: softwareBypass
+      7: "off"
+      8: rebooting
+      9: switchedBypass
+      10: hardwareFailureBypass
+      11: sleepingUntilPowerReturn
+      12: onSmartTrim
+  - name: uioSensorStatusTemperatureDegC
+    oid: 1.3.6.1.4.1.318.1.1.25.1.2.1.6
+    type: gauge
+    help: The sensor's current temperature reading in tenths of degrees Celsius. -
+      1.3.6.1.4.1.318.1.1.25.1.2.1.6
+    indexes:
+    - labelname: uioSensorStatusPortID
+      type: gauge
+    - labelname: uioSensorStatusSensorID
+      type: gauge
+  retries: 1
+cisco_asa:
+  walk:
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+  - 1.3.6.1.4.1.9.9.13.1.3.1.2
+  - 1.3.6.1.4.1.9.9.13.1.3.1.3
+  - 1.3.6.1.4.1.9.9.13.1.3.1.6
+  - 1.3.6.1.4.1.9.9.13.1.4.1.3
+  - 1.3.6.1.4.1.9.9.48.1.1.1.2
+  - 1.3.6.1.4.1.9.9.48.1.1.1.5
+  - 1.3.6.1.4.1.9.9.48.1.1.1.6
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: cpmCPUTotal5min
+    oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    type: gauge
+    help: The overall CPU busy percentage in the last 5 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    indexes:
+    - labelname: cpmCPUTotalIndex
+      type: gauge
+  - name: ciscoEnvMonTemperatureStatusValue
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.3
+    type: gauge
+    help: The current measurement of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.3
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoEnvMonTemperatureStatusIndex
+      labelname: ciscoEnvMonTemperatureStatusDescr
+      oid: 1.3.6.1.4.1.9.9.13.1.3.1.2
+      type: DisplayString
+  - name: ciscoEnvMonTemperatureState
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.6
+    type: gauge
+    help: The current state of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.6
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoEnvMonTemperatureStatusIndex
+      labelname: ciscoEnvMonTemperatureStatusDescr
+      oid: 1.3.6.1.4.1.9.9.13.1.3.1.2
+      type: DisplayString
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: ciscoEnvMonFanState
+    oid: 1.3.6.1.4.1.9.9.13.1.4.1.3
+    type: gauge
+    help: The current state of the fan being instrumented. - 1.3.6.1.4.1.9.9.13.1.4.1.3
+    indexes:
+    - labelname: ciscoEnvMonFanStatusIndex
+      type: gauge
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: ciscoMemoryPoolUsed
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.5
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently in
+      use by applications on the managed device. - 1.3.6.1.4.1.9.9.48.1.1.1.5
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  - name: ciscoMemoryPoolFree
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.6
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently unused
+      on the managed device - 1.3.6.1.4.1.9.9.48.1.1.1.6
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  retries: 1
+cisco_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+  - 1.3.6.1.4.1.9.9.13.1.3.1.3
+  - 1.3.6.1.4.1.9.9.13.1.3.1.6
+  - 1.3.6.1.4.1.9.9.13.1.4.1.3
+  - 1.3.6.1.4.1.9.9.48.1.1.1.2
+  - 1.3.6.1.4.1.9.9.48.1.1.1.5
+  - 1.3.6.1.4.1.9.9.48.1.1.1.6
+  - 1.3.6.1.4.1.9.9.548.1.3.1
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: cpmCPUTotal5min
+    oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    type: gauge
+    help: The overall CPU busy percentage in the last 5 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    indexes:
+    - labelname: cpmCPUTotalIndex
+      type: gauge
+  - name: ciscoEnvMonTemperatureStatusValue
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.3
+    type: gauge
+    help: The current measurement of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.3
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+  - name: ciscoEnvMonTemperatureState
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.6
+    type: gauge
+    help: The current state of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.6
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: ciscoEnvMonFanState
+    oid: 1.3.6.1.4.1.9.9.13.1.4.1.3
+    type: gauge
+    help: The current state of the fan being instrumented. - 1.3.6.1.4.1.9.9.13.1.4.1.3
+    indexes:
+    - labelname: ciscoEnvMonFanStatusIndex
+      type: gauge
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: ciscoMemoryPoolUsed
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.5
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently in
+      use by applications on the managed device. - 1.3.6.1.4.1.9.9.48.1.1.1.5
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  - name: ciscoMemoryPoolFree
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.6
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently unused
+      on the managed device - 1.3.6.1.4.1.9.9.48.1.1.1.6
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  - name: cErrDisableIfStatusVlanIndex
+    oid: 1.3.6.1.4.1.9.9.548.1.3.1.1.1
+    type: gauge
+    help: This object specifies the vlan of the given interface that has been error-disabled
+      - 1.3.6.1.4.1.9.9.548.1.3.1.1.1
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    - labelname: cErrDisableIfStatusVlanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: cErrDisableIfStatusCause
+    oid: 1.3.6.1.4.1.9.9.548.1.3.1.1.2
+    type: gauge
+    help: This object specifies the feature/event that caused the {interface, vlan}
+      (or the entire interface) to be error-disabled. - 1.3.6.1.4.1.9.9.548.1.3.1.1.2
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    - labelname: cErrDisableIfStatusVlanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: udld
+      2: bpduGuard
+      3: channelMisconfig
+      4: pagpFlap
+      5: dtpFlap
+      6: linkFlap
+      7: l2ptGuard
+      8: dot1xSecurityViolation
+      9: portSecurityViolation
+      10: gbicInvalid
+      11: dhcpRateLimit
+      12: unicastFlood
+      13: vmps
+      14: stormControl
+      15: inlinePower
+      16: arpInspection
+      17: portLoopback
+      18: packetBuffer
+      19: macLimit
+      20: linkMonitorFailure
+      21: oamRemoteFailure
+      22: dot1adIncompEtype
+      23: dot1adIncompTunnel
+      24: sfpConfigMismatch
+      25: communityLimit
+      26: invalidPolicy
+      27: lsGroup
+      28: ekey
+      29: portModeFailure
+      30: pppoeIaRateLimit
+      31: oamRemoteCriticalEvent
+      32: oamRemoteDyingGasp
+      33: oamRemoteLinkFault
+      34: mvrp
+      35: tranceiverIncomp
+      36: other
+      37: portReinitLimitReached
+      38: adminRxBBCreditPerfBufIncomp
+      39: ficonNotEnabled
+      40: adminModeIncomp
+      41: adminSpeedIncomp
+      42: adminRxBBCreditIncomp
+      43: adminRxBufSizeIncomp
+      44: eppFailure
+      45: osmEPortUp
+      46: osmNonEPortUp
+      47: udldUniDir
+      48: udldTxRxLoop
+      49: udldNeighbourMismatch
+      50: udldEmptyEcho
+      51: udldAggrasiveModeLinkFailed
+      52: excessivePortInterrupts
+      53: channelErrDisabled
+      54: hwProgFailed
+      55: internalHandshakeFailed
+      56: stpInconsistencyOnVpcPeerLink
+      57: stpPortStateFailure
+      58: ipConflict
+      59: multipleMSapIdsRcvd
+      60: oneHundredPdusWithoutAck
+      61: ipQosCompatCheckFailure
+  - name: cErrDisableIfStatusTimeToRecover
+    oid: 1.3.6.1.4.1.9.9.548.1.3.1.1.3
+    type: gauge
+    help: Time left before the system attempts an automatic recovery of the interface
+      or the vlan of the given interface - 1.3.6.1.4.1.9.9.548.1.3.1.1.3
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    - labelname: cErrDisableIfStatusVlanIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+cisco_router:
+  walk:
+  - 1.3.6.1.2.1.15.3.1.15
+  - 1.3.6.1.2.1.15.3.1.2
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+  - 1.3.6.1.4.1.9.9.13.1.3.1.2
+  - 1.3.6.1.4.1.9.9.13.1.3.1.3
+  - 1.3.6.1.4.1.9.9.13.1.3.1.6
+  - 1.3.6.1.4.1.9.9.13.1.4.1.3
+  - 1.3.6.1.4.1.9.9.166.1.15.1.1.13
+  - 1.3.6.1.4.1.9.9.166.1.15.1.1.9
+  - 1.3.6.1.4.1.9.9.42.1.2.10.1.1
+  - 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+  - 1.3.6.1.4.1.9.9.48.1.1.1.2
+  - 1.3.6.1.4.1.9.9.48.1.1.1.5
+  - 1.3.6.1.4.1.9.9.48.1.1.1.6
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: bgpPeerFsmEstablishedTransitions
+    oid: 1.3.6.1.2.1.15.3.1.15
+    type: counter
+    help: The total number of times the BGP FSM transitioned into the established
+      state. - 1.3.6.1.2.1.15.3.1.15
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+  - name: bgpPeerState
+    oid: 1.3.6.1.2.1.15.3.1.2
+    type: gauge
+    help: The BGP peer connection state. - 1.3.6.1.2.1.15.3.1.2
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    enum_values:
+      1: idle
+      2: connect
+      3: active
+      4: opensent
+      5: openconfirm
+      6: established
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: cpmCPUTotal5min
+    oid: 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    type: gauge
+    help: The overall CPU busy percentage in the last 5 minute period - 1.3.6.1.4.1.9.9.109.1.1.1.1.5
+    indexes:
+    - labelname: cpmCPUTotalIndex
+      type: gauge
+  - name: ciscoEnvMonTemperatureStatusValue
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.3
+    type: gauge
+    help: The current measurement of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.3
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoEnvMonTemperatureStatusIndex
+      labelname: ciscoEnvMonTemperatureStatusDescr
+      oid: 1.3.6.1.4.1.9.9.13.1.3.1.2
+      type: DisplayString
+  - name: ciscoEnvMonTemperatureState
+    oid: 1.3.6.1.4.1.9.9.13.1.3.1.6
+    type: gauge
+    help: The current state of the testpoint being instrumented. - 1.3.6.1.4.1.9.9.13.1.3.1.6
+    indexes:
+    - labelname: ciscoEnvMonTemperatureStatusIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoEnvMonTemperatureStatusIndex
+      labelname: ciscoEnvMonTemperatureStatusDescr
+      oid: 1.3.6.1.4.1.9.9.13.1.3.1.2
+      type: DisplayString
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: ciscoEnvMonFanState
+    oid: 1.3.6.1.4.1.9.9.13.1.4.1.3
+    type: gauge
+    help: The current state of the fan being instrumented. - 1.3.6.1.4.1.9.9.13.1.4.1.3
+    indexes:
+    - labelname: ciscoEnvMonFanStatusIndex
+      type: gauge
+    enum_values:
+      1: normal
+      2: warning
+      3: critical
+      4: shutdown
+      5: notPresent
+      6: notFunctioning
+  - name: cbQosCMDropPkt
+    oid: 1.3.6.1.4.1.9.9.166.1.15.1.1.13
+    type: counter
+    help: The lower 32 bits counter of dropped pkts per class as the result of all
+      features that can produce drops (e.g., police, random detect, etc.). - 1.3.6.1.4.1.9.9.166.1.15.1.1.13
+    indexes:
+    - labelname: cbQosPolicyIndex
+      type: gauge
+    - labelname: cbQosObjectsIndex
+      type: gauge
+  - name: cbQosCMPostPolicyByte
+    oid: 1.3.6.1.4.1.9.9.166.1.15.1.1.9
+    type: counter
+    help: The lower 32 bits count of outbound octets after executing QoS policies.
+      - 1.3.6.1.4.1.9.9.166.1.15.1.1.9
+    indexes:
+    - labelname: cbQosPolicyIndex
+      type: gauge
+    - labelname: cbQosObjectsIndex
+      type: gauge
+  - name: rttMonLatestRttOperCompletionTime
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.1
+    type: gauge
+    help: The completion time of the latest RTT operation successfully completed -
+      1.3.6.1.4.1.9.9.42.1.2.10.1.1
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+  - name: rttMonLatestRttOperSense
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    type: gauge
+    help: A sense code for the completion status of the latest RTT operation. - 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    enum_values:
+      0: other
+      1: ok
+      2: disconnected
+      3: overThreshold
+      4: timeout
+      5: busy
+      6: notConnected
+      7: dropped
+      8: sequenceError
+      9: verifyError
+      10: applicationSpecific
+      11: dnsServerTimeout
+      12: tcpConnectTimeout
+      13: httpTransactionTimeout
+      14: dnsQueryError
+      15: httpError
+      16: error
+      17: mplsLspEchoTxError
+      18: mplsLspUnreachable
+      19: mplsLspMalformedReq
+      20: mplsLspReachButNotFEC
+      21: enableOk
+      22: enableNoConnect
+      23: enableVersionFail
+      24: enableInternalError
+      25: enableAbort
+      26: enableFail
+      27: enableAuthFail
+      28: enableFormatError
+      29: enablePortInUse
+      30: statsRetrieveOk
+      31: statsRetrieveNoConnect
+      32: statsRetrieveVersionFail
+      33: statsRetrieveInternalError
+      34: statsRetrieveAbort
+      35: statsRetrieveFail
+      36: statsRetrieveAuthFail
+      37: statsRetrieveFormatError
+      38: statsRetrievePortInUse
+  - name: ciscoMemoryPoolUsed
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.5
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently in
+      use by applications on the managed device. - 1.3.6.1.4.1.9.9.48.1.1.1.5
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  - name: ciscoMemoryPoolFree
+    oid: 1.3.6.1.4.1.9.9.48.1.1.1.6
+    type: gauge
+    help: Indicates the number of bytes from the memory pool that are currently unused
+      on the managed device - 1.3.6.1.4.1.9.9.48.1.1.1.6
+    indexes:
+    - labelname: ciscoMemoryPoolType
+      type: gauge
+    lookups:
+    - labels:
+      - ciscoMemoryPoolType
+      labelname: ciscoMemoryPoolName
+      oid: 1.3.6.1.4.1.9.9.48.1.1.1.2
+      type: DisplayString
+  retries: 1
+cp:
+  walk:
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.4.1.2620.1.6.7.5
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+  - name: multiProcIndex
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.1
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.1'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcUserTime
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.2
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.2'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcSystemTime
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.3
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.3'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcIdleTime
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.4
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.4'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcUsage
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.5
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.5'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcRunQueue
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.6
+    type: gauge
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.6'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  - name: multiProcInterrupts
+    oid: 1.3.6.1.4.1.2620.1.6.7.5.1.7
+    type: counter
+    help: ' - 1.3.6.1.4.1.2620.1.6.7.5.1.7'
+    indexes:
+    - labelname: multiProcIndex
+      type: counter
+  auth:
+    community: {{ snmp_exporter_auth_cp }}
+dlink_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+eltex_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+hpearuba_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+hpeblade_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+huawei_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  - 1.3.6.1.4.1.2011.6.3.4.1.3
+  - 1.3.6.1.4.1.2011.6.3.5.1.1.2
+  - 1.3.6.1.4.1.2011.6.3.5.1.1.3
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: hwAvgDuty1min
+    oid: 1.3.6.1.4.1.2011.6.3.4.1.3
+    type: gauge
+    help: The value of this object identifies the average CPU usage of a board or
+      entity 1 minute before the data is read. - 1.3.6.1.4.1.2011.6.3.4.1.3
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwCpuDevIndex
+      type: gauge
+  - name: hwMemoryDevSize
+    oid: 1.3.6.1.4.1.2011.6.3.5.1.1.2
+    type: gauge
+    help: Indicates the total size of the memory module which is on the managed object
+      - 1.3.6.1.4.1.2011.6.3.5.1.1.2
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwMemoryDevModuleIndex
+      type: gauge
+  - name: hwMemoryDevFree
+    oid: 1.3.6.1.4.1.2011.6.3.5.1.1.3
+    type: gauge
+    help: Indicates the free size of the memory, in the unit of byte. - 1.3.6.1.4.1.2011.6.3.5.1.1.3
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwMemoryDevModuleIndex
+      type: gauge
+  retries: 1
+huawei_l3:
+  walk:
+  - 1.3.6.1.2.1.15.3.1.15
+  - 1.3.6.1.2.1.15.3.1.2
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  - 1.3.6.1.3.37.1.6.1.1.11
+  - 1.3.6.1.3.37.1.6.1.1.2
+  - 1.3.6.1.4.1.2011.5.25.111.4.1.1.26
+  - 1.3.6.1.4.1.2011.5.25.111.4.1.1.3
+  - 1.3.6.1.4.1.2011.5.25.155.6.1.10
+  - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4
+  - 1.3.6.1.4.1.2011.6.3.4.1.3
+  - 1.3.6.1.4.1.2011.6.3.5.1.1.2
+  - 1.3.6.1.4.1.2011.6.3.5.1.1.3
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: bgpPeerFsmEstablishedTransitions
+    oid: 1.3.6.1.2.1.15.3.1.15
+    type: counter
+    help: The total number of times the BGP FSM transitioned into the established
+      state. - 1.3.6.1.2.1.15.3.1.15
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+  - name: bgpPeerState
+    oid: 1.3.6.1.2.1.15.3.1.2
+    type: gauge
+    help: The BGP peer connection state. - 1.3.6.1.2.1.15.3.1.2
+    indexes:
+    - labelname: bgpPeerRemoteAddr
+      type: InetAddressIPv4
+    enum_values:
+      1: idle
+      2: connect
+      3: active
+      4: opensent
+      5: openconfirm
+      6: established
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: isisISAdjLastUpTime
+    oid: 1.3.6.1.3.37.1.6.1.1.11
+    type: gauge
+    help: If the isisISAdjState is in state 'up', the value of sysUpTime when the
+      adjacency most recently entered the state 'up', or 0 if it has never been in
+      state 'up'. - 1.3.6.1.3.37.1.6.1.1.11
+    indexes:
+    - labelname: isisSysInstance
+      type: gauge
+    - labelname: isisCircIndex
+      type: gauge
+    - labelname: isisISAdjIndex
+      type: gauge
+  - name: isisISAdjState
+    oid: 1.3.6.1.3.37.1.6.1.1.2
+    type: gauge
+    help: The state of the adjacency - 1.3.6.1.3.37.1.6.1.1.2
+    indexes:
+    - labelname: isisSysInstance
+      type: gauge
+    - labelname: isisCircIndex
+      type: gauge
+    - labelname: isisISAdjIndex
+      type: gauge
+    enum_values:
+      1: down
+      2: initializing
+      3: up
+      4: failed
+  - name: nqaResultsRttAvg
+    oid: 1.3.6.1.4.1.2011.5.25.111.4.1.1.26
+    type: gauge
+    help: The average of RTTs that were successfully measured by tests. - 1.3.6.1.4.1.2011.5.25.111.4.1.1.26
+    indexes:
+    - labelname: nqaAdminCtrlOwnerIndex
+      type: DisplayString
+    - labelname: nqaAdminCtrlTestName
+      type: DisplayString
+    - labelname: nqaResultsIndex
+      type: gauge
+    - labelname: nqaResultsHopIndex
+      type: gauge
+  - name: nqaResultsCompletions
+    oid: 1.3.6.1.4.1.2011.5.25.111.4.1.1.3
+    type: gauge
+    help: The status of test. - 1.3.6.1.4.1.2011.5.25.111.4.1.1.3
+    indexes:
+    - labelname: nqaAdminCtrlOwnerIndex
+      type: DisplayString
+    - labelname: nqaAdminCtrlTestName
+      type: DisplayString
+    - labelname: nqaResultsIndex
+      type: gauge
+    - labelname: nqaResultsHopIndex
+      type: gauge
+    enum_values:
+      0: noResult
+      1: success
+      2: failure
+  - name: hwOspfv2NbrState
+    oid: 1.3.6.1.4.1.2011.5.25.155.6.1.10
+    type: gauge
+    help: This object indicates the state of the relationship with this neighbor -
+      1.3.6.1.4.1.2011.5.25.155.6.1.10
+    indexes:
+    - labelname: hwOspfv2ProcessIdIndex
+      type: gauge
+    - labelname: hwOspfv2AreaIdIndex
+      type: InetAddressIPv4
+    - labelname: hwOspfv2SelfIfnetIndex
+      type: gauge
+    - labelname: hwOspfv2NbrIpAddrIndex
+      type: InetAddressIPv4
+    enum_values:
+      1: down
+      2: attempt
+      3: init
+      4: twoWay
+      5: exchangeStart
+      6: exchange
+      7: loading
+      8: full
+  - name: hwCBQoSPolicyStatClassifierName
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.1
+    type: OctetString
+    help: Name of classifier. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.1
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPackets
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.2
+    type: counter
+    help: Number of matched packets. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.2
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedBytes
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.3
+    type: counter
+    help: Number of matched bytes. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.3
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierUnmatchedPackets
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.4
+    type: counter
+    help: Number of unmatched packets. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.4
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierUnmatchedBytes
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.5
+    type: counter
+    help: Number of unmatched bytes. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.5
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPassPackets
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.6
+    type: counter
+    help: Number of packets that match the traffic classifier and pass through - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.6
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPassBytes
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.7
+    type: counter
+    help: Number of bytes that match the traffic classifier and pass through - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.7
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedDropPackets
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.8
+    type: counter
+    help: Number of packets that match the traffic classification policy and are discarded
+      - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.8
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedDropBytes
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.9
+    type: counter
+    help: Number of bytes that match the traffic classification policy and are discarded
+      - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.9
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPacketsRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.10
+    type: counter
+    help: Rate of matched packets. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.10
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedBytesRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.11
+    type: counter
+    help: Rate of matched bytes. - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.11
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPassPacketsRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.12
+    type: counter
+    help: Rate of packets that match the traffic classifier and pass through - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.12
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedPassBytesRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.13
+    type: counter
+    help: Rate of bytes that match the traffic classifier and pass through - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.13
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedDropPacketsRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.14
+    type: counter
+    help: Rate of packets that match the traffic classification policy and are discarded
+      - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.14
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwCBQoSPolicyStatClassifierMatchedDropBytesRate
+    oid: 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.15
+    type: counter
+    help: Rate of bytes that match the traffic classification policy and are discarded
+      - 1.3.6.1.4.1.2011.5.25.32.1.1.5.6.4.1.15
+    indexes:
+    - labelname: hwCBQoSIfApplyPolicyIfIndex
+      type: gauge
+    - labelname: hwCBQoSIfVlanApplyPolicyVlanid1
+      type: gauge
+    - labelname: hwCBQoSIfApplyPolicyDirection
+      type: gauge
+    - labelname: hwCBQoSPolicyStatClassifierName
+      type: OctetString
+  - name: hwAvgDuty1min
+    oid: 1.3.6.1.4.1.2011.6.3.4.1.3
+    type: gauge
+    help: The value of this object identifies the average CPU usage of a board or
+      entity 1 minute before the data is read. - 1.3.6.1.4.1.2011.6.3.4.1.3
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwCpuDevIndex
+      type: gauge
+  - name: hwMemoryDevSize
+    oid: 1.3.6.1.4.1.2011.6.3.5.1.1.2
+    type: gauge
+    help: Indicates the total size of the memory module which is on the managed object
+      - 1.3.6.1.4.1.2011.6.3.5.1.1.2
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwMemoryDevModuleIndex
+      type: gauge
+  - name: hwMemoryDevFree
+    oid: 1.3.6.1.4.1.2011.6.3.5.1.1.3
+    type: gauge
+    help: Indicates the free size of the memory, in the unit of byte. - 1.3.6.1.4.1.2011.6.3.5.1.1.3
+    indexes:
+    - labelname: hwFrameIndex
+      type: gauge
+    - labelname: hwSlotIndex
+      type: gauge
+    - labelname: hwMemoryDevModuleIndex
+      type: gauge
+  retries: 1
+juniper_l2:
+  walk:
+  - 1.3.6.1.2.1.17.2.15.1.3
+  - 1.3.6.1.2.1.2.2.1.14
+  - 1.3.6.1.2.1.2.2.1.19
+  - 1.3.6.1.2.1.2.2.1.3
+  - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.31.1.1.1.1
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.31.1.1.1.11
+  - 1.3.6.1.2.1.31.1.1.1.15
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.7
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.2.1.17.2.2.0
+  - 1.3.6.1.2.1.17.2.3.0
+  - 1.3.6.1.2.1.17.2.6.0
+  - 1.3.6.1.2.1.17.2.7.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: dot1dStpPortState
+    oid: 1.3.6.1.2.1.17.2.15.1.3
+    type: gauge
+    help: The port's current state, as defined by application of the Spanning Tree
+      Protocol - 1.3.6.1.2.1.17.2.15.1.3
+    indexes:
+    - labelname: dot1dStpPort
+      type: gauge
+    enum_values:
+      1: disabled
+      2: blocking
+      3: listening
+      4: learning
+      5: forwarding
+      6: broken
+  - name: dot1dStpPriority
+    oid: 1.3.6.1.2.1.17.2.2
+    type: gauge
+    help: The value of the write-able portion of the Bridge ID (i.e., the first two
+      octets of the (8 octet long) Bridge ID) - 1.3.6.1.2.1.17.2.2
+  - name: dot1dStpTimeSinceTopologyChange
+    oid: 1.3.6.1.2.1.17.2.3
+    type: gauge
+    help: The time (in hundredths of a second) since the last time a topology change
+      was detected by the bridge entity - 1.3.6.1.2.1.17.2.3
+  - name: dot1dStpRootCost
+    oid: 1.3.6.1.2.1.17.2.6
+    type: gauge
+    help: The cost of the path to the root as seen from this bridge. - 1.3.6.1.2.1.17.2.6
+  - name: dot1dStpRootPort
+    oid: 1.3.6.1.2.1.17.2.7
+    type: gauge
+    help: The port number of the port that offers the lowest cost path from this bridge
+      to the root bridge. - 1.3.6.1.2.1.17.2.7
+  - name: ifInErrors
+    oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
+    help: For packet-oriented interfaces, the number of inbound packets that contained
+      errors preventing them from being deliverable to a higher-layer protocol - 1.3.6.1.2.1.2.2.1.14
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutDiscards
+    oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
+    help: The number of outbound packets which were chosen to be discarded even though
+      no errors had been detected to prevent their being transmitted - 1.3.6.1.2.1.2.2.1.19
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifOperStatus
+    oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
+    help: The current operational state of the interface - 1.3.6.1.2.1.2.2.1.8
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+    enum_values:
+      1: up
+      2: down
+      3: testing
+      4: unknown
+      5: dormant
+      6: notPresent
+      7: lowerLayerDown
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCOutUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
+    help: The total number of packets that higher-level protocols requested be transmitted,
+      and which were not addressed to a multicast or broadcast address at this sub-layer,
+      including those that were discarded or not sent - 1.3.6.1.2.1.31.1.1.1.11
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHighSpeed
+    oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
+    help: An estimate of the interface's current bandwidth in units of 1,000,000 bits
+      per second - 1.3.6.1.2.1.31.1.1.1.15
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.31.1.1.1.6
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  - name: ifHCInUcastPkts
+    oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
+    help: The number of packets, delivered by this sub-layer to a higher (sub-)layer,
+      which were not addressed to a multicast or broadcast address at this sub-layer
+      - 1.3.6.1.2.1.31.1.1.1.7
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
+  retries: 1
+rfc_ups:
+  walk:
+  - 1.3.6.1.2.1.33.1
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: upsBatteryStatus
+    oid: 1.3.6.1.2.1.33.1.2.1
+    type: gauge
+    help: The indication of the capacity remaining in the UPS system's batteries -
+      1.3.6.1.2.1.33.1.2.1
+    enum_values:
+      1: unknown
+      2: batteryNormal
+      3: batteryLow
+      4: batteryDepleted
+  - name: upsSecondsOnBattery
+    oid: 1.3.6.1.2.1.33.1.2.2
+    type: gauge
+    help: If the unit is on battery power, the elapsed time since the UPS last switched
+      to battery power, or the time since the network management subsystem was last
+      restarted, whichever is less - 1.3.6.1.2.1.33.1.2.2
+  - name: upsEstimatedMinutesRemaining
+    oid: 1.3.6.1.2.1.33.1.2.3
+    type: gauge
+    help: An estimate of the time to battery charge depletion under the present load
+      conditions if the utility power is off and remains off, or if it were to be
+      lost and remain off. - 1.3.6.1.2.1.33.1.2.3
+  - name: upsEstimatedChargeRemaining
+    oid: 1.3.6.1.2.1.33.1.2.4
+    type: gauge
+    help: An estimate of the battery charge remaining expressed as a percent of full
+      charge. - 1.3.6.1.2.1.33.1.2.4
+  - name: upsBatteryVoltage
+    oid: 1.3.6.1.2.1.33.1.2.5
+    type: gauge
+    help: The magnitude of the present battery voltage. - 1.3.6.1.2.1.33.1.2.5
+  - name: upsBatteryCurrent
+    oid: 1.3.6.1.2.1.33.1.2.6
+    type: gauge
+    help: The present battery current. - 1.3.6.1.2.1.33.1.2.6
+  - name: upsBatteryTemperature
+    oid: 1.3.6.1.2.1.33.1.2.7
+    type: gauge
+    help: The ambient temperature at or near the UPS Battery casing. - 1.3.6.1.2.1.33.1.2.7
+  - name: upsInputLineBads
+    oid: 1.3.6.1.2.1.33.1.3.1
+    type: counter
+    help: A count of the number of times the input entered an out-of-tolerance condition
+      as defined by the manufacturer - 1.3.6.1.2.1.33.1.3.1
+  - name: upsInputNumLines
+    oid: 1.3.6.1.2.1.33.1.3.2
+    type: gauge
+    help: The number of input lines utilized in this device - 1.3.6.1.2.1.33.1.3.2
+  - name: upsInputLineIndex
+    oid: 1.3.6.1.2.1.33.1.3.3.1.1
+    type: gauge
+    help: The input line identifier. - 1.3.6.1.2.1.33.1.3.3.1.1
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputFrequency
+    oid: 1.3.6.1.2.1.33.1.3.3.1.2
+    type: gauge
+    help: The present input frequency. - 1.3.6.1.2.1.33.1.3.3.1.2
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputVoltage
+    oid: 1.3.6.1.2.1.33.1.3.3.1.3
+    type: gauge
+    help: The magnitude of the present input voltage. - 1.3.6.1.2.1.33.1.3.3.1.3
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputCurrent
+    oid: 1.3.6.1.2.1.33.1.3.3.1.4
+    type: gauge
+    help: The magnitude of the present input current. - 1.3.6.1.2.1.33.1.3.3.1.4
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsInputTruePower
+    oid: 1.3.6.1.2.1.33.1.3.3.1.5
+    type: gauge
+    help: The magnitude of the present input true power. - 1.3.6.1.2.1.33.1.3.3.1.5
+    indexes:
+    - labelname: upsInputLineIndex
+      type: gauge
+  - name: upsOutputSource
+    oid: 1.3.6.1.2.1.33.1.4.1
+    type: gauge
+    help: The present source of output power - 1.3.6.1.2.1.33.1.4.1
+    enum_values:
+      1: other
+      2: none
+      3: normal
+      4: bypass
+      5: battery
+      6: booster
+      7: reducer
+  - name: upsOutputFrequency
+    oid: 1.3.6.1.2.1.33.1.4.2
+    type: gauge
+    help: The present output frequency. - 1.3.6.1.2.1.33.1.4.2
+  - name: upsOutputNumLines
+    oid: 1.3.6.1.2.1.33.1.4.3
+    type: gauge
+    help: The number of output lines utilized in this device - 1.3.6.1.2.1.33.1.4.3
+  - name: upsOutputLineIndex
+    oid: 1.3.6.1.2.1.33.1.4.4.1.1
+    type: gauge
+    help: The output line identifier. - 1.3.6.1.2.1.33.1.4.4.1.1
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputVoltage
+    oid: 1.3.6.1.2.1.33.1.4.4.1.2
+    type: gauge
+    help: The present output voltage. - 1.3.6.1.2.1.33.1.4.4.1.2
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputCurrent
+    oid: 1.3.6.1.2.1.33.1.4.4.1.3
+    type: gauge
+    help: The present output current. - 1.3.6.1.2.1.33.1.4.4.1.3
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputPower
+    oid: 1.3.6.1.2.1.33.1.4.4.1.4
+    type: gauge
+    help: The present output true power. - 1.3.6.1.2.1.33.1.4.4.1.4
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsOutputPercentLoad
+    oid: 1.3.6.1.2.1.33.1.4.4.1.5
+    type: gauge
+    help: The percentage of the UPS power capacity presently being used on this output
+      line, i.e., the greater of the percent load of true power capacity and the percent
+      load of VA. - 1.3.6.1.2.1.33.1.4.4.1.5
+    indexes:
+    - labelname: upsOutputLineIndex
+      type: gauge
+  - name: upsBypassFrequency
+    oid: 1.3.6.1.2.1.33.1.5.1
+    type: gauge
+    help: The present bypass frequency. - 1.3.6.1.2.1.33.1.5.1
+  - name: upsBypassNumLines
+    oid: 1.3.6.1.2.1.33.1.5.2
+    type: gauge
+    help: The number of bypass lines utilized in this device - 1.3.6.1.2.1.33.1.5.2
+  - name: upsBypassLineIndex
+    oid: 1.3.6.1.2.1.33.1.5.3.1.1
+    type: gauge
+    help: The bypass line identifier. - 1.3.6.1.2.1.33.1.5.3.1.1
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassVoltage
+    oid: 1.3.6.1.2.1.33.1.5.3.1.2
+    type: gauge
+    help: The present bypass voltage. - 1.3.6.1.2.1.33.1.5.3.1.2
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassCurrent
+    oid: 1.3.6.1.2.1.33.1.5.3.1.3
+    type: gauge
+    help: The present bypass current. - 1.3.6.1.2.1.33.1.5.3.1.3
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsBypassPower
+    oid: 1.3.6.1.2.1.33.1.5.3.1.4
+    type: gauge
+    help: The present true power conveyed by the bypass. - 1.3.6.1.2.1.33.1.5.3.1.4
+    indexes:
+    - labelname: upsBypassLineIndex
+      type: gauge
+  - name: upsAlarmsPresent
+    oid: 1.3.6.1.2.1.33.1.6.1
+    type: gauge
+    help: The present number of active alarm conditions. - 1.3.6.1.2.1.33.1.6.1
+  - name: upsAlarmId
+    oid: 1.3.6.1.2.1.33.1.6.2.1.1
+    type: gauge
+    help: A unique identifier for an alarm condition - 1.3.6.1.2.1.33.1.6.2.1.1
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsAlarmDescr
+    oid: 1.3.6.1.2.1.33.1.6.2.1.2
+    type: OctetString
+    help: A reference to an alarm description object - 1.3.6.1.2.1.33.1.6.2.1.2
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsAlarmTime
+    oid: 1.3.6.1.2.1.33.1.6.2.1.3
+    type: gauge
+    help: The value of sysUpTime when the alarm condition was detected - 1.3.6.1.2.1.33.1.6.2.1.3
+    indexes:
+    - labelname: upsAlarmId
+      type: gauge
+  - name: upsShutdownType
+    oid: 1.3.6.1.2.1.33.1.8.1
+    type: gauge
+    help: This object determines the nature of the action to be taken at the time
+      when the countdown of the upsShutdownAfterDelay and upsRebootWithDuration objects
+      reaches zero - 1.3.6.1.2.1.33.1.8.1
+    enum_values:
+      1: output
+      2: system
+  - name: upsShutdownAfterDelay
+    oid: 1.3.6.1.2.1.33.1.8.2
+    type: gauge
+    help: Setting this object will shutdown (i.e., turn off) either the UPS output
+      or the UPS system (as determined by the value of upsShutdownType at the time
+      of shutdown) after the indicated number of seconds, or less if the UPS batteries
+      become depleted - 1.3.6.1.2.1.33.1.8.2
+  - name: upsStartupAfterDelay
+    oid: 1.3.6.1.2.1.33.1.8.3
+    type: gauge
+    help: Setting this object will start the output after the indicated number of
+      seconds, including starting the UPS, if necessary - 1.3.6.1.2.1.33.1.8.3
+  - name: upsRebootWithDuration
+    oid: 1.3.6.1.2.1.33.1.8.4
+    type: gauge
+    help: Setting this object will immediately shutdown (i.e., turn off) either the
+      UPS output or the UPS system (as determined by the value of upsShutdownType
+      at the time of shutdown) for a period equal to the indicated number of seconds,
+      after which time the output will be started, including starting the UPS, if
+      necessary - 1.3.6.1.2.1.33.1.8.4
+  - name: upsAutoRestart
+    oid: 1.3.6.1.2.1.33.1.8.5
+    type: gauge
+    help: Setting this object to 'on' will cause the UPS system to restart after a
+      shutdown if the shutdown occurred during a power loss as a result of either
+      a upsShutdownAfterDelay or an internal battery depleted condition - 1.3.6.1.2.1.33.1.8.5
+    enum_values:
+      1: "on"
+      2: "off"
+  - name: upsConfigInputVoltage
+    oid: 1.3.6.1.2.1.33.1.9.1
+    type: gauge
+    help: The magnitude of the nominal input voltage - 1.3.6.1.2.1.33.1.9.1
+  - name: upsConfigInputFreq
+    oid: 1.3.6.1.2.1.33.1.9.2
+    type: gauge
+    help: The nominal input frequency - 1.3.6.1.2.1.33.1.9.2
+  - name: upsConfigOutputVoltage
+    oid: 1.3.6.1.2.1.33.1.9.3
+    type: gauge
+    help: The magnitude of the nominal output voltage - 1.3.6.1.2.1.33.1.9.3
+  - name: upsConfigOutputFreq
+    oid: 1.3.6.1.2.1.33.1.9.4
+    type: gauge
+    help: The nominal output frequency - 1.3.6.1.2.1.33.1.9.4
+  - name: upsConfigOutputVA
+    oid: 1.3.6.1.2.1.33.1.9.5
+    type: gauge
+    help: The magnitude of the nominal Volt-Amp rating. - 1.3.6.1.2.1.33.1.9.5
+  - name: upsConfigOutputPower
+    oid: 1.3.6.1.2.1.33.1.9.6
+    type: gauge
+    help: The magnitude of the nominal true power rating. - 1.3.6.1.2.1.33.1.9.6
+  - name: upsConfigLowBattTime
+    oid: 1.3.6.1.2.1.33.1.9.7
+    type: gauge
+    help: The value of upsEstimatedMinutesRemaining at which a lowBattery condition
+      is declared - 1.3.6.1.2.1.33.1.9.7
+  - name: upsConfigAudibleStatus
+    oid: 1.3.6.1.2.1.33.1.9.8
+    type: gauge
+    help: The requested state of the audible alarm - 1.3.6.1.2.1.33.1.9.8
+    enum_values:
+      1: disabled
+      2: enabled
+      3: muted
+  - name: upsConfigLowVoltageTransferPoint
+    oid: 1.3.6.1.2.1.33.1.9.9
+    type: gauge
+    help: The minimum input line voltage allowed before the UPS system transfers to
+      battery backup. - 1.3.6.1.2.1.33.1.9.9
+  - name: upsConfigHighVoltageTransferPoint
+    oid: 1.3.6.1.2.1.33.1.9.10
+    type: gauge
+    help: The maximum line voltage allowed before the UPS system transfers to battery
+      backup. - 1.3.6.1.2.1.33.1.9.10
+  retries: 1

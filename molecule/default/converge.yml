@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-snmp-exporter"
+      include_role:
+        name: "ansible-snmp-exporter"
