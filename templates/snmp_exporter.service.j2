@@ -1,7 +1,6 @@
 [Unit]
 Description=Prometheus SNMP Exporter
 After=network-online.target
-StartLimitInterval=0
 
 [Service]
 Type=simple
@@ -13,11 +12,10 @@ ExecStart=/usr/local/bin/snmp_exporter \
   --log.level={{ snmp_exporter_log_level }} \
   --config.file=/etc/snmp_exporter/snmp.yml
 
-KillMode=process
-
 SyslogIdentifier=snmp_exporter
-Restart=always
-RestartSec=1
+KillMode=control-group
+Restart=on-failure
+LimitNOFILE=4096
 
 [Install]
 WantedBy=multi-user.target
