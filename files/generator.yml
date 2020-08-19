@@ -398,3 +398,20 @@ modules:
         drop_source_indexes: false
       - source_indexes: [ifIndex]
         lookup: 1.3.6.1.2.1.2.2.1.3   # ifType
+
+  uhp:
+    retries: 1
+    walk:
+      - 1.3.6.1.2.1.1.3             # sysUpTime
+      - 1.3.6.1.2.1.2.2.1.10        # IF-MIB::ifInOctets
+      - 1.3.6.1.2.1.2.2.1.16        # IF-MIB::ifOutOctets
+      - 1.3.6.1.4.1.8000.22.8.1     # UHP-MIB::temperature
+      - 1.3.6.1.4.1.8000.22.8.2     # UHP-MIB::cpuLoad
+      - 1.3.6.1.4.1.8000.22.4.6.1   # UHP-MIB::txLevel
+      - 1.3.6.1.4.1.8000.22.2.3     # UHP-MIB::lbandAGC
+      - 1.3.6.1.4.1.8000.22.2.1     # UHP-MIB::lbandSNR
+
+    lookups:
+      - source_indexes: [ifIndex]
+        lookup: 1.3.6.1.2.1.2.2.1.2    # ifDescr
+        drop_source_indexes: true
