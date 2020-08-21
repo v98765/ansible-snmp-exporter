@@ -3219,6 +3219,354 @@ huawei_l3:
     - labelname: hwMemoryDevModuleIndex
       type: gauge
   retries: 1
+infinet:
+  walk:
+  - 1.3.6.1.2.1.2.2.1.10
+  - 1.3.6.1.2.1.2.2.1.16
+  - 1.3.6.1.2.1.2.2.1.2
+  - 1.3.6.1.4.1.3942.1.1.5.1.1.2
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: The time (in hundredths of a second) since the network management portion
+      of the system was last re-initialized. - 1.3.6.1.2.1.1.3
+  - name: ifInOctets
+    oid: 1.3.6.1.2.1.2.2.1.10
+    type: counter
+    help: The total number of octets received on the interface, including framing
+      characters - 1.3.6.1.2.1.2.2.1.10
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: ifOutOctets
+    oid: 1.3.6.1.2.1.2.2.1.16
+    type: counter
+    help: The total number of octets transmitted out of the interface, including framing
+      characters - 1.3.6.1.2.1.2.2.1.16
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+    - labels: []
+      labelname: ifIndex
+  - name: mintInterfaceId
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.1
+    type: gauge
+    help: The index value which uniquely identifies the interface to which this entry
+      is applicable - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.1
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: neighborAddress
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.2
+    type: PhysAddress48
+    help: This value contains MAC address of node's neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.2
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: linkName
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.3
+    type: DisplayString
+    help: Link name. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.3
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: linkCost
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.4
+    type: gauge
+    help: The cost of the connection to the neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.4
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: monitorAmpIn
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.5
+    type: gauge
+    help: Input reference signal level in dB - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.5
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: monitorAmpOut
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.6
+    type: gauge
+    help: Output reference signal level in dB - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.6
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: workingAmpIn
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.7
+    type: gauge
+    help: Input signal level in dB for current RX bitrate - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.7
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: workingAmpOut
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.8
+    type: gauge
+    help: Output signal level in dB for current TX bitrate - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.8
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curBitrateRX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.9
+    type: gauge
+    help: Current RX bitrate in Kb/s - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.9
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curBitrateTX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.10
+    type: gauge
+    help: Current TX bitrate in Kb/s - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.10
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curLoadRX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.11
+    type: gauge
+    help: Total data input/output with the neighbor in Kbits - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.11
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curLoadPPSRX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.12
+    type: gauge
+    help: Total data input/outpur with the neighbor in PPS - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.12
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curLoadTX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.13
+    type: gauge
+    help: Total data input/output with the neighbor in Kbits - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.13
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curLoadPPSTX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.14
+    type: gauge
+    help: Total data input/outpur with the neighbor in PPS - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.14
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: outputBytes
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.15
+    type: counter
+    help: Output bytes number from the neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.15
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: outputPackets
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.16
+    type: counter
+    help: Output packets number from the neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.16
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: inputBytes
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.17
+    type: counter
+    help: Input bytes number from the neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.17
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: inputPackets
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.18
+    type: counter
+    help: Input packets number from the neighbor - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.18
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: retriesPercentTX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.19
+    type: gauge
+    help: Transmit retries percent. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.19
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: errorsPercentTX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.20
+    type: gauge
+    help: Transmit errors percent. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.20
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: linkDistance
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.21
+    type: gauge
+    help: Link distance in Km. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.21
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curBitrateRXindex
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.22
+    type: gauge
+    help: Current RX bitrate index - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.22
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curBitrateTXindex
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.23
+    type: gauge
+    help: Current TX bitrate index - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.23
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: retriesPercentRX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.24
+    type: gauge
+    help: Transmit retries percent from remote side. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.24
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: errorsPercentRX
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.25
+    type: gauge
+    help: Transmit errors percent from remote side. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.25
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: neighborIfIndex
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.26
+    type: gauge
+    help: The interface index of neighbor. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.26
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curRXpower
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.27
+    type: gauge
+    help: Current transmit power from remote side in tenth of dBm. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.27
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: curTXpower
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.28
+    type: gauge
+    help: Current transmit power in tenth of dBm. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.28
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: linkDistanceMeters
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.29
+    type: gauge
+    help: Link distance in meters. - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.29
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  - name: rxRSSI
+    oid: 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.30
+    type: gauge
+    help: Link RX RSSI in dBm - 1.3.6.1.4.1.3942.1.1.5.1.1.2.1.30
+    indexes:
+    - labelname: mintInterfaceId
+      type: gauge
+    - labelname: neighborAddress
+      type: PhysAddress48
+      fixed_size: 6
+  retries: 1
 juniper_l2:
   walk:
   - 1.3.6.1.2.1.17.2.15.1.3
