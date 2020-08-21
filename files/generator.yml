@@ -415,3 +415,10 @@ modules:
       - source_indexes: [ifIndex]
         lookup: 1.3.6.1.2.1.2.2.1.2    # ifDescr
         drop_source_indexes: true
+
+  cdm625:
+    retries: 1
+    walk:
+      - 1.3.6.1.2.1.1.3             # sysUpTime
+      - 1.3.6.1.4.1.6247.34.1.3.2   # CDM-625::
+      - 1.3.6.1.4.1.6247.34.1.3.5
