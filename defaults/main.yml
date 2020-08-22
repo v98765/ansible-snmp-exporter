@@ -5,3 +5,4 @@ snmp_exporter_log_level: info
 
 #auth for modules
 snmp_exporter_auth_cp: public
+snmp_exporter_auth_infinet: public

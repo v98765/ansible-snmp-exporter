@@ -3566,7 +3566,8 @@ infinet:
     - labelname: neighborAddress
       type: PhysAddress48
       fixed_size: 6
-  retries: 1
+  auth:
+    community: {{ snmp_exporter_auth_infinet }}
 juniper_l2:
   walk:
   - 1.3.6.1.2.1.17.2.15.1.3

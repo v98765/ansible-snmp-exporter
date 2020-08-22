@@ -424,7 +424,8 @@ modules:
       - 1.3.6.1.4.1.6247.34.1.3.5
 
   infinet:
-    retries: 1
+    auth:
+      community: \{\{ snmp_exporter_auth_infinet \}\}
     walk:
       - 1.3.6.1.2.1.1.3                 # sysUpTime
       - 1.3.6.1.2.1.2.2.1.10            # IF-MIB::ifInOctets
