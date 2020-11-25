@@ -518,9 +518,6 @@ modules:
         drop_source_indexes: true
       - source_indexes: [ifIndex]
         lookup: 1.3.6.1.2.1.2.2.1.3     # ifType for fc=56
-      - source_indexes: [entPhysicalIndex]
-        drop_source_indexes: true
-        lookup: 1.3.6.1.2.1.47.1.1.1.1.2    # entPhysicalDescr
 
   exos:
     retries: 1
