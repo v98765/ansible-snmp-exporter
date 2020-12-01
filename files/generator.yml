@@ -468,6 +468,7 @@ modules:
       - 1.3.6.1.2.1.31.1.1.1.10     # IF-MIB::ifHCOutOctets
       - 1.3.6.1.2.1.31.1.1.1.11     # IF-MIB::ifHCOutUcastPkts
       - 1.3.6.1.2.1.31.1.1.1.15     # IF-MIB::ifHighSpeed
+      - 1.3.6.1.2.1.10.7.10         # EtherLike-MIB::dot3PauseTable
       - 1.3.6.1.2.1.15.3.1.2        # BGP4-MIB::bgpPeerState
       - 1.3.6.1.2.1.15.3.1.15       # BGP4-MIB::bgpPeerFsmEstablishedTransitions
       - 1.3.6.1.4.1.9.9.91.1.1.1.1.4    # CISCO-ENTITY-SENSOR-MIB::entSensorValue
@@ -481,7 +482,10 @@ modules:
 
     lookups:
       - source_indexes: [ifIndex]
-        lookup: 1.3.6.1.2.1.31.1.1.1.1  # ifName for ifmib and fcfemib
+        lookup: 1.3.6.1.2.1.31.1.1.1.1  # ifName
+        drop_source_indexes: true
+      - source_indexes: [dot3StatsIndex]
+        lookup: 1.3.6.1.2.1.31.1.1.1.1  # ifName
         drop_source_indexes: true
       - source_indexes: [ifIndex]
         lookup: 1.3.6.1.2.1.2.2.1.3     # ifType for eth=6
@@ -544,4 +548,3 @@ modules:
       - source_indexes: [entPhysicalIndex]
         drop_source_indexes: true
         lookup: 1.3.6.1.2.1.47.1.1.1.1.2    # entPhysicalDescr
-
