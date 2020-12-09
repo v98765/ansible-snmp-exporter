@@ -563,28 +563,23 @@ modules:
           '':
             - regex: '(.*)'
               value: '$1'
-        type: Float
       extremeMemoryMonitorSystemTotal:
         regex_extracts:
           '':
             - regex: '(.*)'
               value: '$1'
-        type: gauge
       extremeMemoryMonitorSystemFree:
         regex_extracts:
           '':
             - regex: '(.*)'
               value: '$1'
-        type: gauge
       extremeMemoryMonitorSystemUsage:
         regex_extracts:
           '':
             - regex: '(.*)'
               value: '$1'
-        type: gauge
       extremeMemoryMonitorUserUsage:
         regex_extracts:
           '':
             - regex: '(.*)'
               value: '$1'
-        type: gauge
