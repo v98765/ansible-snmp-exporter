@@ -2195,7 +2195,7 @@ exos:
       type: gauge
   - name: extremeCpuMonitorSystemUtilization1min
     oid: 1.3.6.1.4.1.1916.1.32.1.4.1.8
-    type: Float
+    type: DisplayString
     help: The CPU utilization by system resources - 1.3.6.1.4.1.1916.1.32.1.4.1.8
     indexes:
     - labelname: extremeCpuMonitorSystemSlotId
@@ -2213,7 +2213,7 @@ exos:
       type: gauge
   - name: extremeMemoryMonitorSystemTotal
     oid: 1.3.6.1.4.1.1916.1.32.2.2.1.2
-    type: gauge
+    type: DisplayString
     help: Total amount of DRAM in Kbytes in the system. - 1.3.6.1.4.1.1916.1.32.2.2.1.2
     indexes:
     - labelname: extremeMemoryMonitorSystemSlotId
@@ -2224,7 +2224,7 @@ exos:
         regex: ^(?:(.*))$
   - name: extremeMemoryMonitorSystemFree
     oid: 1.3.6.1.4.1.1916.1.32.2.2.1.3
-    type: gauge
+    type: DisplayString
     help: Total amount of free memory in Kbytes in the system. - 1.3.6.1.4.1.1916.1.32.2.2.1.3
     indexes:
     - labelname: extremeMemoryMonitorSystemSlotId
@@ -2235,7 +2235,7 @@ exos:
         regex: ^(?:(.*))$
   - name: extremeMemoryMonitorSystemUsage
     oid: 1.3.6.1.4.1.1916.1.32.2.2.1.4
-    type: gauge
+    type: DisplayString
     help: Total amount of memory used by system services in Kbytes in the system.
       - 1.3.6.1.4.1.1916.1.32.2.2.1.4
     indexes:
@@ -2247,7 +2247,7 @@ exos:
         regex: ^(?:(.*))$
   - name: extremeMemoryMonitorUserUsage
     oid: 1.3.6.1.4.1.1916.1.32.2.2.1.5
-    type: gauge
+    type: DisplayString
     help: Total amount of memory used by applications in Kbytes in the system. - 1.3.6.1.4.1.1916.1.32.2.2.1.5
     indexes:
     - labelname: extremeMemoryMonitorSystemSlotId
