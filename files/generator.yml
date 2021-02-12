@@ -461,6 +461,7 @@ modules:
       - 1.3.6.1.2.1.1.3             # sysUpTime
       - 1.3.6.1.2.1.2.2.1.7         # IF-MIB::ifAdminStatus
       - 1.3.6.1.2.1.2.2.1.8         # IF-MIB::ifOperStatus
+      - 1.3.6.1.2.1.2.2.1.9         # IF-MIB::ifLastChange
       - 1.3.6.1.2.1.2.2.1.14        # IF-MIB::ifInErrors
       - 1.3.6.1.2.1.2.2.1.19        # IF-MIB::ifOutDiscards
       - 1.3.6.1.2.1.31.1.1.1.6      # IF-MIB::ifHCInOctets
@@ -479,6 +480,7 @@ modules:
       - 1.3.6.1.4.1.9.9.117.1.1.2       # CISCO-ENTITY-FRU-CONTROL-MIB::cefcFRUPowerStatusTable
       - 1.3.6.1.4.1.9.9.117.1.2.1       # CISCO-ENTITY-FRU-CONTROL-MIB::cefcModuleTable
       - 1.3.6.1.4.1.9.9.117.1.4.1       # CISCO-ENTITY-FRU-CONTROL-MIB::cefcFanTrayStatusTable
+      - 1.3.6.1.4.1.9.9.42.1.2.10.1.2   # CISCO-RTTMON-MIB::rttMonLatestRttOperSense
 
     lookups:
       - source_indexes: [ifIndex]
@@ -505,6 +507,7 @@ modules:
       - 1.3.6.1.2.1.31.1.1.1.15     # IF-MIB::ifHighSpeed
       - 1.3.6.1.2.1.2.2.1.7         # IF-MIB::ifAdminStatus
       - 1.3.6.1.2.1.2.2.1.8         # IF-MIB::ifOperStatus
+      - 1.3.6.1.2.1.2.2.1.9         # IF-MIB::ifLastChange
       - 1.3.6.1.4.1.9.9.91.1.1.1.1.4    # CISCO-ENTITY-SENSOR-MIB::entSensorValue
       - 1.3.6.1.4.1.9.9.91.1.1.1.1.5    # CISCO-ENTITY-SENSOR-MIB::entSensorStatus
       - 1.3.6.1.4.1.9.9.117.1.1.2       # CISCO-ENTITY-FRU-CONTROL-MIB::cefcFRUPowerStatusTable
@@ -533,6 +536,7 @@ modules:
       - 1.3.6.1.2.1.1.3             # sysUpTime
       - 1.3.6.1.2.1.2.2.1.7         # IF-MIB::ifAdminStatus
       - 1.3.6.1.2.1.2.2.1.8         # IF-MIB::ifOperStatus
+      - 1.3.6.1.2.1.2.2.1.9         # IF-MIB::ifLastChange
       - 1.3.6.1.2.1.2.2.1.14        # IF-MIB::ifInErrors
       - 1.3.6.1.2.1.2.2.1.19        # IF-MIB::ifOutDiscards
       - 1.3.6.1.2.1.31.1.1.1.6      # IF-MIB::ifHCInOctets

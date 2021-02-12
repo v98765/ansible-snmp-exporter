@@ -1893,6 +1893,7 @@ exos:
   - 1.3.6.1.2.1.2.2.1.3
   - 1.3.6.1.2.1.2.2.1.7
   - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.2.2.1.9
   - 1.3.6.1.2.1.31.1.1.1.1
   - 1.3.6.1.2.1.31.1.1.1.10
   - 1.3.6.1.2.1.31.1.1.1.11
@@ -2029,6 +2030,27 @@ exos:
       5: dormant
       6: notPresent
       7: lowerLayerDown
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational
+      state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
   - name: ifHCOutOctets
     oid: 1.3.6.1.2.1.31.1.1.1.10
     type: counter
@@ -4183,6 +4205,7 @@ mds9k:
   - 1.3.6.1.2.1.2.2.1.3
   - 1.3.6.1.2.1.2.2.1.7
   - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.2.2.1.9
   - 1.3.6.1.2.1.31.1.1.1.1
   - 1.3.6.1.2.1.31.1.1.1.15
   - 1.3.6.1.4.1.9.9.109.1.1.1.1.12
@@ -4255,6 +4278,27 @@ mds9k:
       5: dormant
       6: notPresent
       7: lowerLayerDown
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational
+      state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
   - name: ifHighSpeed
     oid: 1.3.6.1.2.1.31.1.1.1.15
     type: gauge
@@ -5815,6 +5859,7 @@ n3k:
   - 1.3.6.1.2.1.2.2.1.3
   - 1.3.6.1.2.1.2.2.1.7
   - 1.3.6.1.2.1.2.2.1.8
+  - 1.3.6.1.2.1.2.2.1.9
   - 1.3.6.1.2.1.31.1.1.1.1
   - 1.3.6.1.2.1.31.1.1.1.10
   - 1.3.6.1.2.1.31.1.1.1.11
@@ -5828,6 +5873,7 @@ n3k:
   - 1.3.6.1.4.1.9.9.117.1.1.2
   - 1.3.6.1.4.1.9.9.117.1.2.1
   - 1.3.6.1.4.1.9.9.117.1.4.1
+  - 1.3.6.1.4.1.9.9.42.1.2.10.1.2
   - 1.3.6.1.4.1.9.9.91.1.1.1.1.4
   - 1.3.6.1.4.1.9.9.91.1.1.1.1.5
   get:
@@ -6062,6 +6108,27 @@ n3k:
       5: dormant
       6: notPresent
       7: lowerLayerDown
+  - name: ifLastChange
+    oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
+    help: The value of sysUpTime at the time the interface entered its current operational
+      state - 1.3.6.1.2.1.2.2.1.9
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+    lookups:
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
+    - labels:
+      - ifIndex
+      labelname: ifType
+      oid: 1.3.6.1.2.1.2.2.1.3
+      type: gauge
+    - labels: []
+      labelname: ifIndex
   - name: ifHCOutOctets
     oid: 1.3.6.1.2.1.31.1.1.1.10
     type: counter
@@ -6548,6 +6615,53 @@ n3k:
       1: unknown
       2: frontToBack
       3: backToFront
+  - name: rttMonLatestRttOperSense
+    oid: 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    type: gauge
+    help: A sense code for the completion status of the latest RTT operation. - 1.3.6.1.4.1.9.9.42.1.2.10.1.2
+    indexes:
+    - labelname: rttMonCtrlAdminIndex
+      type: gauge
+    enum_values:
+      0: other
+      1: ok
+      2: disconnected
+      3: overThreshold
+      4: timeout
+      5: busy
+      6: notConnected
+      7: dropped
+      8: sequenceError
+      9: verifyError
+      10: applicationSpecific
+      11: dnsServerTimeout
+      12: tcpConnectTimeout
+      13: httpTransactionTimeout
+      14: dnsQueryError
+      15: httpError
+      16: error
+      17: mplsLspEchoTxError
+      18: mplsLspUnreachable
+      19: mplsLspMalformedReq
+      20: mplsLspReachButNotFEC
+      21: enableOk
+      22: enableNoConnect
+      23: enableVersionFail
+      24: enableInternalError
+      25: enableAbort
+      26: enableFail
+      27: enableAuthFail
+      28: enableFormatError
+      29: enablePortInUse
+      30: statsRetrieveOk
+      31: statsRetrieveNoConnect
+      32: statsRetrieveVersionFail
+      33: statsRetrieveInternalError
+      34: statsRetrieveAbort
+      35: statsRetrieveFail
+      36: statsRetrieveAuthFail
+      37: statsRetrieveFormatError
+      38: statsRetrievePortInUse
   - name: entSensorValue
     oid: 1.3.6.1.4.1.9.9.91.1.1.1.1.4
     type: gauge
